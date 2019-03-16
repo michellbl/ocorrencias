@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Meu estilo.css -->
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <title>Tabela de erros de prova online</title>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary"><!-- Inicio Navegação -->
+          <a class="navbar-brand" href="index.html">
+            <img src="imagem/logo-unip-home.png" style="width: 150px;">
+          </a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul>
+
+            </ul>
+          </div>
+        </nav><!-- Fim Navegação -->
+    </header>
+    
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Procurar...">
+          <table id="myTable">
+            <tr class="header">
+              <th style="width:10%;">RA</th>
+              <th style="width:10%;">Aluno</th>
+              <th style="width:10%;">Disciplina</th>
+              <th style="width:10%;">Erro da prova</th>
+              <th style="width:10%;">Técnico</th>
+              <th style="width:10%;">Data</th>
+              <th style="width:10%;">Hora</th>
+            </tr>
+            <tr>
+              <td>19268x</td>
+              <td>Fulano 1</td>
+              <td>Analise</td>
+              <td>Falta imagem</td>
+              <td>Michell</td>
+              <td>01/01/2019</td>
+              <td>10:00</td>
+            </tr>
+            <tr>
+              <td>9999m</td>
+              <td>Fulano 1</td>
+              <td>Analise</td>
+              <td>Falta imagem</td>
+              <td>Michell</td>
+              <td>01/01/2019</td>
+              <td>10:00</td>
+              </tr>
+            <tr>
+              <td>6666x</td>
+              <td>Fulano 1</td>
+              <td>Analise</td>
+              <td>Falta imagem</td>
+              <td>Michell</td>
+              <td>01/01/2019</td>
+              <td>10:00</td>
+            </tr>
+            <tr>
+              <td>8889x</td>
+              <td>Fulano 1</td>
+              <td>Analise</td>
+              <td>Falta imagem</td>
+              <td>Michell</td>
+              <td>01/01/2019</td>
+              <td>10:00</td>
+            </tr>
+          </table>
+      
+      <!-- Meu script customizado -->
+      <script>
+          function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[0];
+              if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }       
+            }
+          }
+      </script>
+      
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
